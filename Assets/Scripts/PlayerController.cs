@@ -9,6 +9,9 @@ public class PlayerController : MonoBehaviour
 	public Animator playerAnimator;
 	public Camera mainCamera;
 
+	public float rotationSpeed = 100f;
+
+
 	private Vector2 movementInput = Vector2.zero;
 
 	private Vector3 RightDirection
@@ -16,7 +19,7 @@ public class PlayerController : MonoBehaviour
 		get
 		{
 			Vector3 direction = mainCamera.gameObject.transform.right;
-			direction.y = 0;
+			//direction.y = 0;
 
 			return direction.normalized;
 		}
@@ -27,7 +30,7 @@ public class PlayerController : MonoBehaviour
 		get
 		{
 			Vector3 direction = mainCamera.gameObject.transform.forward;
-			direction.y = 0;
+			//direction.y = 0;
 
 			return direction.normalized;
 		}
@@ -36,6 +39,18 @@ public class PlayerController : MonoBehaviour
 	public void OnMovement(InputAction.CallbackContext value)
 	{
 		movementInput = value.ReadValue<Vector2>();
+		
+		// animation
+		if(movementInput.magnitude > 0)
+        {
+			playerAnimator.SetBool("isRunning", true);
+
+        }
+        else
+        {
+			playerAnimator.SetBool("isRunning", false);
+		}
+		
 	}
 
 
@@ -50,5 +65,6 @@ public class PlayerController : MonoBehaviour
 		playerAnimator.SetFloat("MovementX", movement.x);
 		playerAnimator.SetFloat("MovementY", movement.y);
 		playerAnimator.SetFloat("MovementZ", movement.z);
+
 	}
 }
