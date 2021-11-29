@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8137163211220471175
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8137163211220471174}
+  - component: {fileID: 8137163211220471173}
+  - component: {fileID: 8137163211220471172}
+  m_Layer: 0
+  m_Name: SnakeManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8137163211220471174
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8137163211220471175}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.87, y: 0.91, z: -23.91}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8137163211220471173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8137163211220471175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ecc067d5c3732d47a79a7dd06d06093, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  distanceBetween: 0.2
+  bodyParts:
+  - {fileID: 4993305859061102473, guid: a1a91c3c13be72d49bb3ad39e8f5942d, type: 3}
+  - {fileID: 4993305859061102473, guid: a1a91c3c13be72d49bb3ad39e8f5942d, type: 3}
+--- !u!114 &8137163211220471172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8137163211220471175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe3b97073ab72be469933d458ce87470, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AnkIP_bassDrum: {fileID: 8418777572681539434, guid: fd1a241b4273a4f4aa1793a3906b077d, type: 3}
+  AnkIP_bassElectric: {fileID: 8183472790973719117, guid: 98e71c17531e2a940966d16f4fa1922c, type: 3}
+  AnkIP_bongoDrums: {fileID: 2041953231364464231, guid: 8b717834a1ea4f145914c1b32780462a, type: 3}
+  AnkIP_flute: {fileID: 782010114282535117, guid: 0c8e09baea2f9f94ab2a2b09b56f823f, type: 3}
+  AnkIP_guitarAcoustic: {fileID: 7126645978836091970, guid: f55c0532d5083a940ad56b458c4f93c9, type: 3}
+  AnkIP_guitarElectric: {fileID: 3338997900113429174, guid: 874b89f298598bf40bd47206ef09e07e, type: 3}
+  AnkIP_hihat: {fileID: 8904613597661480135, guid: 88b2e4027f2b75340b438f23506caf28, type: 3}
+  AnkIP_piano: {fileID: 8564987093989059696, guid: a9ad7f1a0740972438b3bee8bbfd4464, type: 3}
+  AnkIP_snareDrum: {fileID: 921826417051026706, guid: d167f212d81db3949ba02fe7891c419f, type: 3}
+  AnkIP_tamborine: {fileID: 2984810387633884866, guid: aaa33e4538795e448a52d4dd3002cae2, type: 3}
+  AnkIP_tuba: {fileID: 8161167746736881783, guid: 14aaaebc5890c2546a9f16174bc67500, type: 3}
+  AnkIP_violine: {fileID: 2614214178813709066, guid: 63db6958032d9b041a156cd55cd03458, type: 3}
+  caller: 
