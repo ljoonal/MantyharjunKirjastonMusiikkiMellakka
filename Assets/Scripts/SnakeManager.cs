@@ -32,11 +32,11 @@ public class SnakeManager : MonoBehaviour
 
         for (int i = 0; i < snakeBody.Count; i++)
         {
-            if (snakeBody[i] == null)
+            if (snakeBody[i] == null || snakeBody[i] == GameObject.Find("SnakeSacrifice"))
             {
                 snakeBody.RemoveAt(i);
                 i = i - 1;
-            }
+            } 
         }
         if (snakeBody.Count == 0)
             Destroy(this);
@@ -56,8 +56,9 @@ public class SnakeManager : MonoBehaviour
                     snakeBody[i].transform.rotation = markM.markerList[0].rotation;
                     markM.markerList.RemoveAt(0);
                 }
-            }
+        }
     }
+
     void CreateBodyParts()
     {
         if (snakeBody.Count == 0)
@@ -105,7 +106,7 @@ public class SnakeManager : MonoBehaviour
             temp.name = temp.name.Replace("(Clone)", "").Trim(); // Remove "(Clone)" from snake part prefabs as they spawn
             snakeBody.Add(temp);
             bodyParts.RemoveAt(0);
-            
+
             temp.GetComponent<MarkerManager>().ClearMarkerList();
             countUp = 0;
         }
