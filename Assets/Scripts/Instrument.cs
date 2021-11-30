@@ -42,8 +42,8 @@ public static class InstrumentData
 public class Instrument : MonoBehaviour
 {
 	public InstrumentEnum instrument;
-
 	private AudioSource audioSource;
+	private bool skipTriggerProcessing = false;
 
 	void Start()
 	{
@@ -53,10 +53,13 @@ public class Instrument : MonoBehaviour
 
 	void OnTriggerEnter(Collider other)
 	{
-		if (other.tag == "Player")
+		Debug.Log("Instrument trigger enter: " + other.tag);
+		if (skipTriggerProcessing) return;
+		if (other.gameObject.CompareTag("Player"))
 		{
-			// TODO
 			audioSource.volume = 1f;
+			FindObjectOfType<SnakeManager>().AddBodyParts(gameObject);
+			skipTriggerProcessing = true;
 		}
 	}
 }

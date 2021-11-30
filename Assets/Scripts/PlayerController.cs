@@ -9,7 +9,10 @@ public class PlayerController : MonoBehaviour
 	public Animator playerAnimator;
 	public Camera mainCamera;
 
-	public float rotationSpeed = 100f;
+	[Range(0f, 10f)]
+	public float rotationSpeed = 1f;
+	[Range(0f, 10f)]
+	public float movementSpeed = 3f;
 
 
 	private Vector2 movementInput = Vector2.zero;
@@ -18,7 +21,7 @@ public class PlayerController : MonoBehaviour
 	{
 		get
 		{
-			Vector3 direction = mainCamera.gameObject.transform.right;
+			Vector3 direction = Vector3.ProjectOnPlane(mainCamera.transform.right, Vector3.up);
 			//direction.y = 0;
 
 			return direction.normalized;
@@ -29,7 +32,7 @@ public class PlayerController : MonoBehaviour
 	{
 		get
 		{
-			Vector3 direction = mainCamera.gameObject.transform.forward;
+			Vector3 direction = Vector3.ProjectOnPlane(mainCamera.transform.up, Vector3.up);
 			//direction.y = 0;
 
 			return direction.normalized;
@@ -57,14 +60,15 @@ public class PlayerController : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		Vector3 movement = new Vector3();
+		Vector3 movement = Vector3.zero;
 		movement += RightDirection * movementInput.x;
 		movement += ForwardDirection * movementInput.y;
+		movement = movement.normalized * Time.deltaTime * 100 * movementSpeed;
 
 		playerController.SimpleMove(movement);
-		playerAnimator.SetFloat("MovementX", movement.x);
-		playerAnimator.SetFloat("MovementY", movement.y);
-		playerAnimator.SetFloat("MovementZ", movement.z);
 
+		playerAnimator.transform.rotation = Quaternion.LookRotation(movement);
+
+		playerAnimator.SetFloat("MovementSpeed", movement.magnitude);
 	}
 }
