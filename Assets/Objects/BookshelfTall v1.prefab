@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6240034522497003199}
   - component: {fileID: 4055956218319495072}
   - component: {fileID: 6253495271844084688}
+  - component: {fileID: 8559259449322097980}
   m_Layer: 0
   m_Name: BookshelfTall v1
   m_TagString: Untagged
@@ -81,3 +82,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8559259449322097980
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3962583446337075431}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.020000001, y: 0.0054256516, z: 0.022000005}
+  m_Center: {x: -5.410941e-10, y: -0.0000000043121693, z: 0.011001097}
