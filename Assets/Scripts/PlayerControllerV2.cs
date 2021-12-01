@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerControllerV2 : MonoBehaviour
 {
-
     public CharacterController playerController;
     public Animator playerAnimator;
 
@@ -13,26 +12,24 @@ public class PlayerControllerV2 : MonoBehaviour
 
     float horizontal;
     float vertical;
-    private void Update()
+    private void FixedUpdate()
     {
-        Vector3 moveDir = Vector3.forward * vertical + Vector3.right * horizontal;
-                
-        Vector3 projectCameraForward = Vector3.ProjectOnPlane(Camera.main.transform.forward, Vector3.up);
-        Quaternion rotationToCamera = Quaternion.LookRotation(projectCameraForward, Vector3.up);
-               
+        Vector3 moveDir = -Vector3.forward * vertical + -Vector3.right * horizontal;
 
-        moveDir = rotationToCamera * moveDir;
-        Quaternion rotationToMoveDir = Quaternion.LookRotation(moveDir, Vector3.up);
-        
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, rotationToCamera, rotationSpeed * Time.deltaTime);
-        //transform.rotation = Quaternion.RotateTowards(transform.rotation, rotationToMoveDir, rotationSpeed * Time.deltaTime);
+        Vector3 projectCameraForward = Vector3.ProjectOnPlane(playerController.transform.forward, Vector3.up);
+
         transform.position += moveDir * moveSpeed * Time.deltaTime;
-    }
-    public void OnMoveInput(float horizontal, float vertical)
-    {
-        this.vertical = vertical;
-        this.horizontal = horizontal;
+        Quaternion rotationToMoveDir = Quaternion.LookRotation(moveDir, Vector3.up);
 
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, rotationToMoveDir, rotationSpeed * Time.deltaTime);
+    }
+ 
+    public void OnMoveInput(float hori, float verti)
+    {
+
+        this.horizontal = -verti + hori;
+        this.vertical = hori + verti;
+        
         // run animation
         if(horizontal != 0 || vertical != 0)
         {
