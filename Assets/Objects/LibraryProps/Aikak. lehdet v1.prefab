@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5371114240528242877}
   - component: {fileID: 6431038992657614227}
   - component: {fileID: 8456885084802042266}
+  - component: {fileID: 3756981414440528905}
   m_Layer: 0
   m_Name: Aikak. lehdet v1
   m_TagString: Untagged
@@ -85,3 +86,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &3756981414440528905
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4787394532911430370}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -9222749483420979677, guid: 02b24a2cdd6bba140aa45f655c75abfe, type: 3}

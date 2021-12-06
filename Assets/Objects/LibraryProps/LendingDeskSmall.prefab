@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 416570499977041158}
   - component: {fileID: 837500554983121920}
   - component: {fileID: 8590892120981907573}
+  - component: {fileID: 6841123130316273320}
   m_Layer: 0
   m_Name: LendingDeskSmall
   m_TagString: Untagged
@@ -82,3 +83,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &6841123130316273320
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3524699598675014973}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0073848097, y: 0.0075041438, z: 0.008962512}
+  m_Center: {x: 0, y: 0.00000006053597, z: 0.004481258}
