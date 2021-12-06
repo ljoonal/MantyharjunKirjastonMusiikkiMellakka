@@ -45,6 +45,8 @@ public class Instrument : MonoBehaviour
 
 	private AudioSource audioSource;
 
+	private bool added = false;
+
 	void Start()
 	{
 		audioSource = GetComponent<AudioSource>();
@@ -53,10 +55,14 @@ public class Instrument : MonoBehaviour
 
 	void OnTriggerEnter(Collider other)
 	{
-		if (other.tag == "Player")
+		if (added) return;
+		if (other.CompareTag("Player"))
 		{
-			// TODO
+			Debug.Log("Player has touched " + instrument.ToString());
+			SnakeManager snakeManager = FindObjectOfType<SnakeManager>();
+			snakeManager.AddBodyParts(gameObject);
 			audioSource.volume = 1f;
+			added = true;
 		}
 	}
 }
