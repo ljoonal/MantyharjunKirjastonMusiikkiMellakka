@@ -1981,52 +1981,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8191480833045767765, guid: f62fa4bd7b2cc9548806ec0004c1e619, type: 3}
   m_PrefabInstance: {fileID: 47712690}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &49952871
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 49952872}
-  - component: {fileID: 49952873}
-  m_Layer: 0
-  m_Name: SnakeManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &49952872
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 49952871}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1630895473}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &49952873
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 49952871}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ecc067d5c3732d47a79a7dd06d06093, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 88130766}
-  distanceBetween: 0.2
-  bodyParts: []
 --- !u!1001 &53779727
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -52317,11 +52271,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de64ba09d3c3b514aaf4e6dd208130e7, type: 3}
---- !u!4 &1630895473 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7623149670478370454, guid: 30e2e8c4c406b31f19bb61e95711b5d5, type: 3}
-  m_PrefabInstance: {fileID: 7623149669759055212}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1631535501
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -67662,10 +67611,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerRig
       objectReference: {fileID: 0}
-    - target: {fileID: 968342898919535670, guid: 144ffff4d390888248faba2bffa18651, type: 3}
-      propertyPath: m_ApplyRootMotion
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 144ffff4d390888248faba2bffa18651, type: 3}
 --- !u!1001 &1019570625566048150
@@ -71950,10 +71895,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7623149670478370448, guid: 30e2e8c4c406b31f19bb61e95711b5d5, type: 3}
-      propertyPath: moveInputEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+    - target: {fileID: 49952873, guid: 30e2e8c4c406b31f19bb61e95711b5d5, type: 3}
+      propertyPath: target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 88130766}
     - target: {fileID: 7623149670478370453, guid: 30e2e8c4c406b31f19bb61e95711b5d5, type: 3}
       propertyPath: m_Name
       value: MapGlobals
