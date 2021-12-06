@@ -44,8 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  distanceBetween: 0.2
-  bodyParts: []
+  maxDistanceBetween: 1
 --- !u!1 &7623149669324130624
 GameObject:
   m_ObjectHideFlags: 0
