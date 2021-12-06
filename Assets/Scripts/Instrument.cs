@@ -41,6 +41,7 @@ public static class InstrumentData
 
 public class Instrument : MonoBehaviour
 {
+	public static event EventHandler<Instrument> InstrumentCollected = delegate { };
 	public InstrumentEnum instrument;
 
 	private AudioSource audioSource;
@@ -63,6 +64,7 @@ public class Instrument : MonoBehaviour
 			snakeManager.AddBodyParts(gameObject);
 			audioSource.volume = 1f;
 			added = true;
+			InstrumentCollected.Invoke(this, this);
 		}
 	}
 }
