@@ -1981,6 +1981,52 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8191480833045767765, guid: f62fa4bd7b2cc9548806ec0004c1e619, type: 3}
   m_PrefabInstance: {fileID: 47712690}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &49952871
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 49952872}
+  - component: {fileID: 49952873}
+  m_Layer: 0
+  m_Name: SnakeManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &49952872
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 49952871}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1630895473}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &49952873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 49952871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ecc067d5c3732d47a79a7dd06d06093, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 88130766}
+  distanceBetween: 0.2
+  bodyParts: []
 --- !u!1001 &53779727
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2327,7 +2373,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: -2112414636774434093, guid: 2b9db3e2bec602042853b8bde3bfe3a5, type: 3}
   m_PrefabInstance: {fileID: 1637981910}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &71519534
+--- !u!64 &71519537
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -17269,7 +17315,7 @@ Transform:
   - {fileID: 1091189398}
   - {fileID: 1680852471}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &550277500
 PrefabInstance:
@@ -43000,7 +43046,7 @@ Transform:
   - {fileID: 4720384976475753540}
   - {fileID: 3495352536657539490}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1345385722
 PrefabInstance:
@@ -52271,6 +52317,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de64ba09d3c3b514aaf4e6dd208130e7, type: 3}
+--- !u!4 &1630895473 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7623149670478370454, guid: 30e2e8c4c406b31f19bb61e95711b5d5, type: 3}
+  m_PrefabInstance: {fileID: 7623149669759055212}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1631535501
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -53131,135 +53182,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e48b94331b97e5dbdb8ca5e2696cb0cb, type: 3}
---- !u!1001 &1651276350
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 8137163211220471172, guid: fbe2741b20a9f9840bf02391d4e5468b, type: 3}
-      propertyPath: AnkIP_tuba
-      value: 
-      objectReference: {fileID: 8375433147622645083, guid: 14aaaebc5890c2546a9f16174bc67500, type: 3}
-    - target: {fileID: 8137163211220471172, guid: fbe2741b20a9f9840bf02391d4e5468b, type: 3}
-      propertyPath: AnkIP_flute
-      value: 
-      objectReference: {fileID: 6868586560544053262, guid: 0c8e09baea2f9f94ab2a2b09b56f823f, type: 3}
-    - target: {fileID: 8137163211220471172, guid: fbe2741b20a9f9840bf02391d4e5468b, type: 3}
-      propertyPath: AnkIP_hihat
-      value: 
-      objectReference: {fileID: 8834676286148576857, guid: 88b2e4027f2b75340b438f23506caf28, type: 3}
-    - target: {fileID: 8137163211220471172, guid: fbe2741b20a9f9840bf02391d4e5468b, type: 3}
-      propertyPath: AnkIP_piano
-      value: 
-      objectReference: {fileID: 9061294150758393063, guid: a9ad7f1a0740972438b3bee8bbfd4464, type: 3}
-    - target: {fileID: 8137163211220471172, guid: fbe2741b20a9f9840bf02391d4e5468b, type: 3}
-      propertyPath: AnkIP_violine
-      value: 
-      objectReference: {fileID: 363966642919013779, guid: 63db6958032d9b041a156cd55cd03458, type: 3}
-    - target: {fileID: 8137163211220471172, guid: fbe2741b20a9f9840bf02391d4e5468b, type: 3}
-      propertyPath: AnkIP_bassDrum
-      value: 
-      objectReference: {fileID: 8180153834319991266, guid: fd1a241b4273a4f4aa1793a3906b077d, type: 3}
-    - target: {fileID: 8137163211220471172, guid: fbe2741b20a9f9840bf02391d4e5468b, type: 3}
-      propertyPath: AnkIP_snareDrum
-      value: 
-      objectReference: {fileID: 6007628610841530652, guid: d167f212d81db3949ba02fe7891c419f, type: 3}
-    - target: {fileID: 8137163211220471172, guid: fbe2741b20a9f9840bf02391d4e5468b, type: 3}
-      propertyPath: AnkIP_tamborine
-      value: 
-      objectReference: {fileID: 9157900582481317930, guid: aaa33e4538795e448a52d4dd3002cae2, type: 3}
-    - target: {fileID: 8137163211220471172, guid: fbe2741b20a9f9840bf02391d4e5468b, type: 3}
-      propertyPath: AnkIP_bongoDrums
-      value: 
-      objectReference: {fileID: 8981976585558096429, guid: 8b717834a1ea4f145914c1b32780462a, type: 3}
-    - target: {fileID: 8137163211220471172, guid: fbe2741b20a9f9840bf02391d4e5468b, type: 3}
-      propertyPath: AnkIP_bassElectric
-      value: 
-      objectReference: {fileID: 332624743844961717, guid: 98e71c17531e2a940966d16f4fa1922c, type: 3}
-    - target: {fileID: 8137163211220471172, guid: fbe2741b20a9f9840bf02391d4e5468b, type: 3}
-      propertyPath: AnkIP_guitarAcoustic
-      value: 
-      objectReference: {fileID: 151044625553781901, guid: f55c0532d5083a940ad56b458c4f93c9, type: 3}
-    - target: {fileID: 8137163211220471172, guid: fbe2741b20a9f9840bf02391d4e5468b, type: 3}
-      propertyPath: AnkIP_guitarElectric
-      value: 
-      objectReference: {fileID: 1360838580478981212, guid: 874b89f298598bf40bd47206ef09e07e, type: 3}
-    - target: {fileID: 8137163211220471173, guid: fbe2741b20a9f9840bf02391d4e5468b, type: 3}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 88130766}
-    - target: {fileID: 8137163211220471173, guid: fbe2741b20a9f9840bf02391d4e5468b, type: 3}
-      propertyPath: distanceBetween
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8137163211220471173, guid: fbe2741b20a9f9840bf02391d4e5468b, type: 3}
-      propertyPath: bodyParts.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8137163211220471173, guid: fbe2741b20a9f9840bf02391d4e5468b, type: 3}
-      propertyPath: bodyParts.Array.data[0]
-      value: 
-      objectReference: {fileID: 1142991071373316420, guid: a1a91c3c13be72d49bb3ad39e8f5942d, type: 3}
-    - target: {fileID: 8137163211220471173, guid: fbe2741b20a9f9840bf02391d4e5468b, type: 3}
-      propertyPath: bodyParts.Array.data[1]
-      value: 
-      objectReference: {fileID: 4992280815465613327, guid: 8c15b2e3554f2f340b670dd860d07c43, type: 3}
-    - target: {fileID: 8137163211220471174, guid: fbe2741b20a9f9840bf02391d4e5468b, type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8137163211220471174, guid: fbe2741b20a9f9840bf02391d4e5468b, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 7.641028
-      objectReference: {fileID: 0}
-    - target: {fileID: 8137163211220471174, guid: fbe2741b20a9f9840bf02391d4e5468b, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -15.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 8137163211220471174, guid: fbe2741b20a9f9840bf02391d4e5468b, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -20.4671
-      objectReference: {fileID: 0}
-    - target: {fileID: 8137163211220471174, guid: fbe2741b20a9f9840bf02391d4e5468b, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8137163211220471174, guid: fbe2741b20a9f9840bf02391d4e5468b, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8137163211220471174, guid: fbe2741b20a9f9840bf02391d4e5468b, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8137163211220471174, guid: fbe2741b20a9f9840bf02391d4e5468b, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8137163211220471174, guid: fbe2741b20a9f9840bf02391d4e5468b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8137163211220471174, guid: fbe2741b20a9f9840bf02391d4e5468b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8137163211220471174, guid: fbe2741b20a9f9840bf02391d4e5468b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8137163211220471175, guid: fbe2741b20a9f9840bf02391d4e5468b, type: 3}
-      propertyPath: m_Name
-      value: SnakeManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 8137163211220471175, guid: fbe2741b20a9f9840bf02391d4e5468b, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: fbe2741b20a9f9840bf02391d4e5468b, type: 3}
 --- !u!1001 &1652504481
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -56812,7 +56734,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: -7179632912991178855, guid: 2b9db3e2bec602042853b8bde3bfe3a5, type: 3}
   m_PrefabInstance: {fileID: 1637981910}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &1771363304
+--- !u!64 &1771363307
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
