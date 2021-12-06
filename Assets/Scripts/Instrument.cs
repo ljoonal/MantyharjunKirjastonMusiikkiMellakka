@@ -39,9 +39,19 @@ public static class InstrumentData
 	};
 }
 
+public class InstrumentEventArgs : EventArgs
+{
+	public readonly Instrument instrument;
+
+	public InstrumentEventArgs(Instrument instrument)
+	{
+		this.instrument = instrument;
+	}
+}
+
 public class Instrument : MonoBehaviour
 {
-	public static event EventHandler<Instrument> InstrumentCollected = delegate { };
+	public static event EventHandler<InstrumentEventArgs> InstrumentCollected = delegate { };
 	public InstrumentEnum instrument;
 
 	private AudioSource audioSource;
@@ -59,12 +69,10 @@ public class Instrument : MonoBehaviour
 		if (added) return;
 		if (other.CompareTag("Player"))
 		{
-			Debug.Log("Player has touched " + instrument.ToString());
-			SnakeManager snakeManager = FindObjectOfType<SnakeManager>();
-			snakeManager.AddBodyParts(gameObject);
+			FindObjectOfType<SnakeManager>().AddBodyParts(gameObject);
 			audioSource.volume = 1f;
 			added = true;
-			InstrumentCollected.Invoke(this, this);
+			FindObjectOfType<GameStateManager>().OnInstrumentColleted(this);
 		}
 	}
 }
