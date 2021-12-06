@@ -2942,17 +2942,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 968342899047954913, guid: 144ffff4d390888248faba2bffa18651, type: 3}
   m_PrefabInstance: {fileID: 968342899001834799}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &88130769 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 968342899047954942, guid: 144ffff4d390888248faba2bffa18651, type: 3}
-  m_PrefabInstance: {fileID: 968342899001834799}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58ecb7a6577a0d04c8caabfc4f980724, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &89529570
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -53201,6 +53190,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SnakeManager
       objectReference: {fileID: 0}
+    - target: {fileID: 8137163211220471175, guid: fbe2741b20a9f9840bf02391d4e5468b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fbe2741b20a9f9840bf02391d4e5468b, type: 3}
 --- !u!1001 &1652504481
@@ -57027,17 +57020,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3313752336416174486, guid: 8077d91014aa95f4e88fc101e203d5c8, type: 3}
   m_PrefabInstance: {fileID: 1779105673}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1781300270 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7623149669324130626, guid: 30e2e8c4c406b31f19bb61e95711b5d5, type: 3}
-  m_PrefabInstance: {fileID: 7623149669759055212}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1785660754
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -67675,10 +67657,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerRig
       objectReference: {fileID: 0}
-    - target: {fileID: 968342899047954912, guid: 144ffff4d390888248faba2bffa18651, type: 3}
-      propertyPath: m_UIInputModule
-      value: 
-      objectReference: {fileID: 1781300270}
+    - target: {fileID: 968342898919535670, guid: 144ffff4d390888248faba2bffa18651, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 968342899047954943, guid: 144ffff4d390888248faba2bffa18651, type: 3}
+      propertyPath: rotationSpeed
+      value: 400
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 144ffff4d390888248faba2bffa18651, type: 3}
 --- !u!1001 &1019570625566048150
@@ -71921,7 +71907,7 @@ PrefabInstance:
     - target: {fileID: 7623149670478370448, guid: 30e2e8c4c406b31f19bb61e95711b5d5, type: 3}
       propertyPath: moveInputEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 88130769}
+      objectReference: {fileID: 0}
     - target: {fileID: 7623149670478370453, guid: 30e2e8c4c406b31f19bb61e95711b5d5, type: 3}
       propertyPath: m_Name
       value: MapGlobals

@@ -5,12 +5,11 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-	public CharacterController playerController;
+	public CharacterController characterController;
 	public Animator playerAnimator;
-	public Camera mainCamera;
 
-	public float rotationSpeed = 100f;
-
+	public float moveSpeed = 5.0f;
+	public float rotationSpeed = 300.0f;
 
 	private Vector2 movementInput = Vector2.zero;
 
@@ -18,10 +17,7 @@ public class PlayerController : MonoBehaviour
 	{
 		get
 		{
-			Vector3 direction = mainCamera.gameObject.transform.right;
-			//direction.y = 0;
-
-			return direction.normalized;
+			return Vector3.ProjectOnPlane(Camera.main.transform.right, Vector3.up).normalized;
 		}
 	}
 
@@ -29,42 +25,38 @@ public class PlayerController : MonoBehaviour
 	{
 		get
 		{
-			Vector3 direction = mainCamera.gameObject.transform.forward;
-			//direction.y = 0;
+			return Vector3.ProjectOnPlane(Camera.main.transform.forward, Vector3.up).normalized;
+		}
+	}
 
-			return direction.normalized;
+	private void FixedUpdate()
+	{
+		Vector3 movement = new Vector3();
+		movement += RightDirection * movementInput.x;
+		movement += ForwardDirection * movementInput.y;
+
+		characterController.SimpleMove(movement * moveSpeed);
+
+		Quaternion rotationToMoveDir = Quaternion.LookRotation(movement, Vector3.up);
+
+		characterController.transform.rotation = Quaternion.RotateTowards(characterController.transform.rotation, rotationToMoveDir, rotationSpeed * Time.deltaTime);
+
+		// animation
+		if (movement.x != 0 || movement.z != 0)
+		{
+			playerAnimator.SetBool("isRunning", true);
+
+		}
+		else
+		{
+			playerAnimator.SetBool("isRunning", false);
 		}
 	}
 
 	public void OnMovement(InputAction.CallbackContext value)
 	{
 		movementInput = value.ReadValue<Vector2>();
-		
-		// animation
-		if(movementInput.magnitude > 0)
-        {
-			playerAnimator.SetBool("isRunning", true);
-
-        }
-        else
-        {
-			playerAnimator.SetBool("isRunning", false);
-		}
-		
 	}
 
-
-	// Update is called once per frame
-	void Update()
-	{
-		Vector3 movement = new Vector3();
-		movement += RightDirection * movementInput.x;
-		movement += ForwardDirection * movementInput.y;
-
-		playerController.SimpleMove(movement);
-		playerAnimator.SetFloat("MovementX", movement.x);
-		playerAnimator.SetFloat("MovementY", movement.y);
-		playerAnimator.SetFloat("MovementZ", movement.z);
-
-	}
 }
+
