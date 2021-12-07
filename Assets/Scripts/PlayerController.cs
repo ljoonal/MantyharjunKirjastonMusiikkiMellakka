@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+/** Controls the player character behavior. */
 public class PlayerController : MonoBehaviour
 {
 	public CharacterController characterController;

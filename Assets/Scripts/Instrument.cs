@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/** All the implemented instruments. */
 public enum InstrumentEnum
 {
 	BassDrum,
@@ -19,6 +20,7 @@ public enum InstrumentEnum
 	Violine
 }
 
+/** Data that relates to the implemented instruments. */
 public static class InstrumentData
 {
 	public static string FinnishName(this InstrumentEnum self) => self switch
@@ -39,19 +41,10 @@ public static class InstrumentData
 	};
 }
 
-public class InstrumentEventArgs : EventArgs
-{
-	public readonly Instrument instrument;
 
-	public InstrumentEventArgs(Instrument instrument)
-	{
-		this.instrument = instrument;
-	}
-}
-
+/** A scripted instrument that the player can collect & add to the snake body. */
 public class Instrument : MonoBehaviour
 {
-	public static event EventHandler<InstrumentEventArgs> InstrumentCollected = delegate { };
 	public InstrumentEnum instrument;
 
 	private AudioSource audioSource;

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
+/** Controls the snake that the player makes my collecting instruments. */
 public class SnakeManager : MonoBehaviour
 {
 	public Transform target;

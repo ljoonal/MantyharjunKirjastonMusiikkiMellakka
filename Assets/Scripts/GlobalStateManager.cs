@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/** Manages scene independent state, so scene transitions for example. */
 public class GlobalStateManager : MonoBehaviour
 {
 	public void PlayGame()

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/** Controls the main camera's position to follow the player smoothly. */
 public class MainCamera : MonoBehaviour
 {
     public Transform target;
