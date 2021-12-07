@@ -59819,8 +59819,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chaser
       objectReference: {fileID: 0}
+    - target: {fileID: 2306378071521359411, guid: 586b933bf89bb5723a75893797cf02ad, type: 3}
+      propertyPath: m_TagString
+      value: Chaser
+      objectReference: {fileID: 0}
     - target: {fileID: 2306378071521359415, guid: 586b933bf89bb5723a75893797cf02ad, type: 3}
       propertyPath: target
+      value: 
+      objectReference: {fileID: 88130766}
+    - target: {fileID: 2306378071521359415, guid: 586b933bf89bb5723a75893797cf02ad, type: 3}
+      propertyPath: backupTarget
       value: 
       objectReference: {fileID: 88130766}
     m_RemovedComponents: []

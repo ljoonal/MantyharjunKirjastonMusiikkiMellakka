@@ -1693,7 +1693,7 @@ GameObject:
   - component: {fileID: 2306378071521359415}
   m_Layer: 0
   m_Name: Chaser
-  m_TagString: Untagged
+  m_TagString: Chaser
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1761,7 +1761,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1196fc8109584aaf9c671819d3619aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  backupTarget: {fileID: 0}
   agent: {fileID: 2306378071521359412}
 --- !u!1 &2306378071530140873
 GameObject:

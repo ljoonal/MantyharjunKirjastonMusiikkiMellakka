@@ -66,8 +66,11 @@ public class Instrument : MonoBehaviour
 
 	void OnTriggerEnter(Collider other)
 	{
-		if (added) return;
-		if (other.CompareTag("Player"))
+		if (other.CompareTag("Chaser"))
+		{
+			// TODO: Game over?
+		}
+		if (!added && other.CompareTag("Player"))
 		{
 			FindObjectOfType<SnakeManager>().AddBodyParts(gameObject);
 			audioSource.volume = 1f;

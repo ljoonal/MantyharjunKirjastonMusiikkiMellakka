@@ -1,14 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class SnakeManager : MonoBehaviour
 {
 	public Transform target;
 	public float maxDistanceBetween = 1f;
-	private List<GameObject> bodyParts = new List<GameObject>();
+	private readonly List<GameObject> bodyParts = new List<GameObject>();
 
-    void FixedUpdate()
+	public ref readonly List<GameObject> GetBodyPartsRef()
+	{
+		return ref bodyParts;
+	}
+
+	void FixedUpdate()
     {
 		Transform previousTransform = target;
 		foreach (var bpart in bodyParts)
