@@ -29005,6 +29005,23 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7505600642768144549, guid: 200e72c6e4b8b4b4bbfd212ba900cdd5, type: 3}
   m_PrefabInstance: {fileID: 1086075365}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1087432848 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7623149670478370453, guid: 30e2e8c4c406b31f19bb61e95711b5d5, type: 3}
+  m_PrefabInstance: {fileID: 7623149669759055212}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1087432849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1087432848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86448b286844262beae9d03656e5fbfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1089786197
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -57660,10 +57677,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayingGuitarElectric
       objectReference: {fileID: 0}
-    - target: {fileID: 4250521465050966885, guid: c730c8dd2e254e36ba1df290f93a68fd, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 4250521465050966890, guid: c730c8dd2e254e36ba1df290f93a68fd, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -57708,14 +57721,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4524643020945022504, guid: c730c8dd2e254e36ba1df290f93a68fd, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 7674363253333207326, guid: c730c8dd2e254e36ba1df290f93a68fd, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
+    - target: {fileID: 4884872413589197543, guid: c730c8dd2e254e36ba1df290f93a68fd, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 88130766}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c730c8dd2e254e36ba1df290f93a68fd, type: 3}
 --- !u!1001 &315496778415936112
@@ -59838,10 +59847,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayingPiano
       objectReference: {fileID: 0}
-    - target: {fileID: 2056494515573925748, guid: 205fc82d26e563352843c756fa46bdc3, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 2056494515573925755, guid: 205fc82d26e563352843c756fa46bdc3, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -59886,25 +59891,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2874448976282035928, guid: 205fc82d26e563352843c756fa46bdc3, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5545638315846698699, guid: 205fc82d26e563352843c756fa46bdc3, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5669159079170247733, guid: 205fc82d26e563352843c756fa46bdc3, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 6590612770043850929, guid: 205fc82d26e563352843c756fa46bdc3, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 8783346023579860166, guid: 205fc82d26e563352843c756fa46bdc3, type: 3}
-      propertyPath: m_Layer
-      value: 6
+    - target: {fileID: 4977329159452977473, guid: 205fc82d26e563352843c756fa46bdc3, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 88130766}
+    - target: {fileID: 4977329159452977473, guid: 205fc82d26e563352843c756fa46bdc3, type: 3}
+      propertyPath: pullRange
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 205fc82d26e563352843c756fa46bdc3, type: 3}
@@ -61708,14 +61701,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8286721503817808048}
     m_Modifications:
-    - target: {fileID: 938727586780101202, guid: 60b03a587c0337abb8a28faca41e39a8, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 4116984424104644159, guid: 60b03a587c0337abb8a28faca41e39a8, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
+    - target: {fileID: 1974873206138839510, guid: 60b03a587c0337abb8a28faca41e39a8, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 88130766}
     - target: {fileID: 7592582928961928132, guid: 60b03a587c0337abb8a28faca41e39a8, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -61763,10 +61752,6 @@ PrefabInstance:
     - target: {fileID: 7592582928961928133, guid: 60b03a587c0337abb8a28faca41e39a8, type: 3}
       propertyPath: m_Name
       value: PlayingTamborine
-      objectReference: {fileID: 0}
-    - target: {fileID: 7592582928961928133, guid: 60b03a587c0337abb8a28faca41e39a8, type: 3}
-      propertyPath: m_Layer
-      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60b03a587c0337abb8a28faca41e39a8, type: 3}
@@ -62180,25 +62165,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8286721503817808048}
     m_Modifications:
-    - target: {fileID: 3606832362454433613, guid: aacf618aa6a729caea62a8e7592531eb, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 6479525651657441769, guid: aacf618aa6a729caea62a8e7592531eb, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 6882078649237748234, guid: aacf618aa6a729caea62a8e7592531eb, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
+    - target: {fileID: 2442452953575724051, guid: aacf618aa6a729caea62a8e7592531eb, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 88130766}
     - target: {fileID: 7093794604615391456, guid: aacf618aa6a729caea62a8e7592531eb, type: 3}
       propertyPath: m_Name
       value: PlayingVioline
-      objectReference: {fileID: 0}
-    - target: {fileID: 7093794604615391456, guid: aacf618aa6a729caea62a8e7592531eb, type: 3}
-      propertyPath: m_Layer
-      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7093794604615391463, guid: aacf618aa6a729caea62a8e7592531eb, type: 3}
       propertyPath: m_RootOrder
@@ -62310,22 +62283,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8286721503817808048}
     m_Modifications:
-    - target: {fileID: 511050793354168147, guid: 6b73d964da8d0409c9cf40addb7f7e49, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 652196702232166818, guid: 6b73d964da8d0409c9cf40addb7f7e49, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 4313056034313949932, guid: 6b73d964da8d0409c9cf40addb7f7e49, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5620239244659964633, guid: 6b73d964da8d0409c9cf40addb7f7e49, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
+    - target: {fileID: 5120901507389361058, guid: 6b73d964da8d0409c9cf40addb7f7e49, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 88130766}
     - target: {fileID: 6444971054447125755, guid: 6b73d964da8d0409c9cf40addb7f7e49, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -62374,14 +62335,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayingHihat
       objectReference: {fileID: 0}
-    - target: {fileID: 6444971054447127300, guid: 6b73d964da8d0409c9cf40addb7f7e49, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 7550896393785121891, guid: 6b73d964da8d0409c9cf40addb7f7e49, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b73d964da8d0409c9cf40addb7f7e49, type: 3}
 --- !u!1001 &6957321663740357325
@@ -62391,22 +62344,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8286721503817808048}
     m_Modifications:
-    - target: {fileID: 686090210509063629, guid: bbaf2f898d81064a08b45785304627ac, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3504056800881137915, guid: bbaf2f898d81064a08b45785304627ac, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5526267408554233947, guid: bbaf2f898d81064a08b45785304627ac, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5540970175632336126, guid: bbaf2f898d81064a08b45785304627ac, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 6483293532959457536, guid: bbaf2f898d81064a08b45785304627ac, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -62455,14 +62392,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayingBassDrum
       objectReference: {fileID: 0}
-    - target: {fileID: 6483293532959457537, guid: bbaf2f898d81064a08b45785304627ac, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 7164707431120025786, guid: bbaf2f898d81064a08b45785304627ac, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
+    - target: {fileID: 6668404362143021593, guid: bbaf2f898d81064a08b45785304627ac, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 88130766}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bbaf2f898d81064a08b45785304627ac, type: 3}
 --- !u!4 &7081402461917216551 stripped
@@ -62562,14 +62495,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8286721503817808048}
     m_Modifications:
-    - target: {fileID: 608207127581624001, guid: defddaf7f54aea1fca56e675bcdd9403, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 963081088675234735, guid: defddaf7f54aea1fca56e675bcdd9403, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
+    - target: {fileID: 834296164132163277, guid: defddaf7f54aea1fca56e675bcdd9403, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 88130766}
     - target: {fileID: 6710855281062087172, guid: defddaf7f54aea1fca56e675bcdd9403, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -62617,10 +62546,6 @@ PrefabInstance:
     - target: {fileID: 6710855281062087173, guid: defddaf7f54aea1fca56e675bcdd9403, type: 3}
       propertyPath: m_Name
       value: PlayingBassElectric
-      objectReference: {fileID: 0}
-    - target: {fileID: 6710855281062087173, guid: defddaf7f54aea1fca56e675bcdd9403, type: 3}
-      propertyPath: m_Layer
-      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: defddaf7f54aea1fca56e675bcdd9403, type: 3}
@@ -62812,10 +62737,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8286721503817808048}
     m_Modifications:
-    - target: {fileID: 1071568352156351909, guid: 22878ca4501fed323ba34f1c9ffc748d, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
+    - target: {fileID: 4123125457979295416, guid: 22878ca4501fed323ba34f1c9ffc748d, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 88130766}
     - target: {fileID: 6819236854312151493, guid: 22878ca4501fed323ba34f1c9ffc748d, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -62863,14 +62788,6 @@ PrefabInstance:
     - target: {fileID: 6819236854312151494, guid: 22878ca4501fed323ba34f1c9ffc748d, type: 3}
       propertyPath: m_Name
       value: PlayingBongoDrums
-      objectReference: {fileID: 0}
-    - target: {fileID: 6819236854312151494, guid: 22878ca4501fed323ba34f1c9ffc748d, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 8432373872486027202, guid: 22878ca4501fed323ba34f1c9ffc748d, type: 3}
-      propertyPath: m_Layer
-      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22878ca4501fed323ba34f1c9ffc748d, type: 3}
@@ -63455,18 +63372,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8286721503817808048}
     m_Modifications:
-    - target: {fileID: 1252760974328281447, guid: 23fc0bd2ea0b56ccd80071e5d4f2adad, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3080489288924546642, guid: 23fc0bd2ea0b56ccd80071e5d4f2adad, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3139125034679731108, guid: 23fc0bd2ea0b56ccd80071e5d4f2adad, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 4692329701587627385, guid: 23fc0bd2ea0b56ccd80071e5d4f2adad, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -63515,14 +63420,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayingSnareDrum
       objectReference: {fileID: 0}
-    - target: {fileID: 4692329701587627386, guid: 23fc0bd2ea0b56ccd80071e5d4f2adad, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 7892708084516227963, guid: 23fc0bd2ea0b56ccd80071e5d4f2adad, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
+    - target: {fileID: 6830321674370880198, guid: 23fc0bd2ea0b56ccd80071e5d4f2adad, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 88130766}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23fc0bd2ea0b56ccd80071e5d4f2adad, type: 3}
 --- !u!4 &8702960396199735314 stripped
@@ -63537,10 +63438,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8286721503817808048}
     m_Modifications:
-    - target: {fileID: 1284455282767658901, guid: 7fc06693224db6deabe7ced209dc8f16, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
+    - target: {fileID: 3211877917129669392, guid: 7fc06693224db6deabe7ced209dc8f16, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 88130766}
     - target: {fileID: 4733141583676246681, guid: 7fc06693224db6deabe7ced209dc8f16, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -63589,14 +63490,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayingGuitarAcoustic
       objectReference: {fileID: 0}
-    - target: {fileID: 4733141583676246682, guid: 7fc06693224db6deabe7ced209dc8f16, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 8697337624182849628, guid: 7fc06693224db6deabe7ced209dc8f16, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fc06693224db6deabe7ced209dc8f16, type: 3}
 --- !u!4 &8755476172937223923 stripped
@@ -63611,21 +63504,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8286721503817808048}
     m_Modifications:
-    - target: {fileID: 1197791676101258135, guid: 0a9f229425a37e9c9a6f4d408c43d31f, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 2975421113244655811, guid: 0a9f229425a37e9c9a6f4d408c43d31f, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
+    - target: {fileID: 2177375514197563251, guid: 0a9f229425a37e9c9a6f4d408c43d31f, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 88130766}
     - target: {fileID: 4675681278215756698, guid: 0a9f229425a37e9c9a6f4d408c43d31f, type: 3}
       propertyPath: m_Name
       value: PlayingTuba
-      objectReference: {fileID: 0}
-    - target: {fileID: 4675681278215756698, guid: 0a9f229425a37e9c9a6f4d408c43d31f, type: 3}
-      propertyPath: m_Layer
-      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4675681278215756701, guid: 0a9f229425a37e9c9a6f4d408c43d31f, type: 3}
       propertyPath: m_RootOrder
@@ -63680,10 +63565,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8286721503817808048}
     m_Modifications:
-    - target: {fileID: 1194595465500101726, guid: b3a055f6ca7e3df85b0d30f76a794f5b, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
+    - target: {fileID: 3741614555319513369, guid: b3a055f6ca7e3df85b0d30f76a794f5b, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 88130766}
     - target: {fileID: 4677054494490552733, guid: b3a055f6ca7e3df85b0d30f76a794f5b, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -63731,14 +63616,6 @@ PrefabInstance:
     - target: {fileID: 4677054494490552734, guid: b3a055f6ca7e3df85b0d30f76a794f5b, type: 3}
       propertyPath: m_Name
       value: PlayingFlute
-      objectReference: {fileID: 0}
-    - target: {fileID: 4677054494490552734, guid: b3a055f6ca7e3df85b0d30f76a794f5b, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5724596714295781539, guid: b3a055f6ca7e3df85b0d30f76a794f5b, type: 3}
-      propertyPath: m_Layer
-      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3a055f6ca7e3df85b0d30f76a794f5b, type: 3}

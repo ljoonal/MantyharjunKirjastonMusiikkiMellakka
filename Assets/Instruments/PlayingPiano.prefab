@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 2056494515573925752}
   - component: {fileID: 2737683840211809805}
   - component: {fileID: 2056494515573925739}
-  m_Layer: 0
+  - component: {fileID: 4977329159452977473}
+  m_Layer: 6
   m_Name: PlayingPiano
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,10 +46,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 1
-  m_Height: 1
+  m_Radius: 0.5
+  m_Height: 0.7
   m_Direction: 1
-  m_Center: {x: 0, y: 0.5, z: 0}
+  m_Center: {x: 0, y: 0.7, z: 0}
 --- !u!82 &2737683840211809805
 AudioSource:
   m_ObjectHideFlags: 0
@@ -158,6 +159,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instrument: 7
+--- !u!114 &4977329159452977473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2056494515573925748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9adfc4d80f6d11c4d8aefc3e7d05c66e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  moveSpeed: 10
+  pullRange: 3
 --- !u!1001 &2737683840092292495
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -213,6 +229,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ParticleNotes
       objectReference: {fileID: 0}
+    - target: {fileID: 7568339134454022980, guid: 8bece7ec7db072f4a89adc0158d229f7, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8bece7ec7db072f4a89adc0158d229f7, type: 3}
 --- !u!4 &5545638315846698702 stripped
@@ -227,6 +247,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2056494515573925755}
     m_Modifications:
+    - target: {fileID: 831972602035335684, guid: 461ea47eb56f81689adda52ffa7adac9, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2416775311145734793, guid: 461ea47eb56f81689adda52ffa7adac9, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -274,6 +298,18 @@ PrefabInstance:
     - target: {fileID: 2961674641843732083, guid: 461ea47eb56f81689adda52ffa7adac9, type: 3}
       propertyPath: m_Name
       value: Piano
+      objectReference: {fileID: 0}
+    - target: {fileID: 2961674641843732083, guid: 461ea47eb56f81689adda52ffa7adac9, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4378503950696104695, guid: 461ea47eb56f81689adda52ffa7adac9, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6164139387765123098, guid: 461ea47eb56f81689adda52ffa7adac9, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 461ea47eb56f81689adda52ffa7adac9, type: 3}

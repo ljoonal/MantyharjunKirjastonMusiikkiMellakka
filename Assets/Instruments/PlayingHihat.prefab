@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 6444971054447125752}
   - component: {fileID: 6918994855803979057}
   - component: {fileID: 6444971054447127307}
-  m_Layer: 0
+  - component: {fileID: 5120901507389361058}
+  m_Layer: 6
   m_Name: PlayingHihat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,8 +46,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.75
-  m_Height: 2
+  m_Radius: 0.2
+  m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!82 &6918994855803979057
@@ -158,6 +159,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instrument: 6
+--- !u!114 &5120901507389361058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6444971054447127300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9adfc4d80f6d11c4d8aefc3e7d05c66e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  moveSpeed: 8
+  pullRange: 4
 --- !u!1001 &3650130104905237374
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -168,6 +184,14 @@ PrefabInstance:
     - target: {fileID: 683650359212986770, guid: 9d7867c387804cdaa9bd196cfbd3d091, type: 3}
       propertyPath: m_Name
       value: Hihat
+      objectReference: {fileID: 0}
+    - target: {fileID: 683650359212986770, guid: 9d7867c387804cdaa9bd196cfbd3d091, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3868662451186205741, guid: 9d7867c387804cdaa9bd196cfbd3d091, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4306373082993051572, guid: 9d7867c387804cdaa9bd196cfbd3d091, type: 3}
       propertyPath: m_RootOrder
@@ -212,6 +236,14 @@ PrefabInstance:
     - target: {fileID: 4306373082993051572, guid: 9d7867c387804cdaa9bd196cfbd3d091, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6516130035185819421, guid: 9d7867c387804cdaa9bd196cfbd3d091, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9176299940140071335, guid: 9d7867c387804cdaa9bd196cfbd3d091, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d7867c387804cdaa9bd196cfbd3d091, type: 3}
@@ -274,6 +306,10 @@ PrefabInstance:
     - target: {fileID: 7568339134454022980, guid: 8bece7ec7db072f4a89adc0158d229f7, type: 3}
       propertyPath: m_Name
       value: ParticleNotes
+      objectReference: {fileID: 0}
+    - target: {fileID: 7568339134454022980, guid: 8bece7ec7db072f4a89adc0158d229f7, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8bece7ec7db072f4a89adc0158d229f7, type: 3}

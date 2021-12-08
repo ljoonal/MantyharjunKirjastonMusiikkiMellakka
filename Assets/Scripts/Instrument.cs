@@ -57,6 +57,11 @@ public class Instrument : MonoBehaviour
 		audioSource.volume = 0.5f;
 	}
 
+	void Update()
+	{
+		transform.Rotate(Vector3.up * 100 * Time.deltaTime);
+	}
+
 	void OnTriggerEnter(Collider other)
 	{
 		if (other.CompareTag("Chaser"))
@@ -69,6 +74,8 @@ public class Instrument : MonoBehaviour
 			audioSource.volume = 1f;
 			added = true;
 			FindObjectOfType<GameStateManager>().OnInstrumentColleted(this);
+			ItemPull itemPull = GetComponent<ItemPull>();
+			if (itemPull != null) Destroy(itemPull);
 		}
 	}
 }

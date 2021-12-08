@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 7093794604615391460}
   - component: {fileID: 6558981260928102489}
   - component: {fileID: 7093794604615391462}
-  m_Layer: 0
+  - component: {fileID: 2442452953575724051}
+  m_Layer: 6
   m_Name: PlayingVioline
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,10 +46,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 1
+  m_Radius: 0.3
   m_Height: 1
   m_Direction: 1
-  m_Center: {x: 0, y: 0.5, z: 0}
+  m_Center: {x: -0.1, y: 0.6, z: 0}
 --- !u!82 &6558981260928102489
 AudioSource:
   m_ObjectHideFlags: 0
@@ -158,6 +159,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instrument: 11
+--- !u!114 &2442452953575724051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7093794604615391456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9adfc4d80f6d11c4d8aefc3e7d05c66e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  moveSpeed: 8
+  pullRange: 3
 --- !u!1001 &6558981260367854601
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -213,6 +229,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ParticleNotes
       objectReference: {fileID: 0}
+    - target: {fileID: 7568339134454022980, guid: 8bece7ec7db072f4a89adc0158d229f7, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8bece7ec7db072f4a89adc0158d229f7, type: 3}
 --- !u!4 &3606832362454433608 stripped
@@ -227,9 +247,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7093794604615391463}
     m_Modifications:
+    - target: {fileID: 4237855301865380399, guid: 22978d5db75fd0a0c87453ecfbefe974, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4370192171748188620, guid: 22978d5db75fd0a0c87453ecfbefe974, type: 3}
       propertyPath: m_Name
       value: Violine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4370192171748188620, guid: 22978d5db75fd0a0c87453ecfbefe974, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8210556161241805771, guid: 22978d5db75fd0a0c87453ecfbefe974, type: 3}
       propertyPath: m_RootOrder

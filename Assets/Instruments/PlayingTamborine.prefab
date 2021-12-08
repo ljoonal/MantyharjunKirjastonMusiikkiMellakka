@@ -9,10 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7592582928961928132}
-  - component: {fileID: 7592582928961928137}
   - component: {fileID: 5776521682218465951}
   - component: {fileID: 7592582928961928187}
-  m_Layer: 0
+  - component: {fileID: 1974873206138839510}
+  - component: {fileID: 420861591424186717}
+  m_Layer: 6
   m_Name: PlayingTamborine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35,20 +36,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &7592582928961928137
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7592582928961928133}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 1
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.65, z: 0}
 --- !u!82 &5776521682218465951
 AudioSource:
   m_ObjectHideFlags: 0
@@ -158,6 +145,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instrument: 9
+--- !u!114 &1974873206138839510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7592582928961928133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9adfc4d80f6d11c4d8aefc3e7d05c66e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  moveSpeed: 5
+  pullRange: 3
+--- !u!135 &420861591424186717
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7592582928961928133}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.15
+  m_Center: {x: 0, y: 0.65, z: 0}
 --- !u!1001 &817791735582087025
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -168,6 +183,10 @@ PrefabInstance:
     - target: {fileID: 458916929520659747, guid: b1844c379f8a59d9683dc8f6c2ae0e68, type: 3}
       propertyPath: m_Name
       value: Tamborine
+      objectReference: {fileID: 0}
+    - target: {fileID: 458916929520659747, guid: b1844c379f8a59d9683dc8f6c2ae0e68, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5571934599626224827, guid: b1844c379f8a59d9683dc8f6c2ae0e68, type: 3}
       propertyPath: m_RootOrder
@@ -274,6 +293,10 @@ PrefabInstance:
     - target: {fileID: 7568339134454022980, guid: 8bece7ec7db072f4a89adc0158d229f7, type: 3}
       propertyPath: m_Name
       value: ParticleNotes
+      objectReference: {fileID: 0}
+    - target: {fileID: 7568339134454022980, guid: 8bece7ec7db072f4a89adc0158d229f7, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8bece7ec7db072f4a89adc0158d229f7, type: 3}
