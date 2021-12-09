@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MantyHarju.unity
     guid: 4bc5a703788913052b2ab59a2d4e517d
+  - enabled: 1
+    path: Assets/Scenes/Scoreboard.unity
+    guid: ec06aeb8a1ca0fe1dbf90dd18fef36e5
   m_configObjects: {}

@@ -23,7 +23,6 @@ public class GameOver : MonoBehaviour
 				{
 					yield return new WaitForSecondsRealtime(5.0f);
 					SceneManager.LoadScene("Scoreboard");
-					Debug.Log("ass");
 				}
 			}
 		}
