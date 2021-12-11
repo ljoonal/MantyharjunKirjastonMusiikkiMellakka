@@ -1,8 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 
 
@@ -22,7 +22,9 @@ public class GameOver : MonoBehaviour
 				for (; ; )
 				{
 					yield return new WaitForSecondsRealtime(5.0f);
-					SceneManager.LoadScene("Scoreboard");
+					Time.timeScale = 1;
+					AudioListener.pause = false;
+					FindObjectOfType<GlobalStateManager>().Scoreboard();
 				}
 			}
 		}
