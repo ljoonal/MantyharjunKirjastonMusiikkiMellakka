@@ -38,9 +38,12 @@ public class PlayerController : MonoBehaviour
 
 		characterController.SimpleMove(movement * moveSpeed);
 
-		Quaternion rotationToMoveDir = Quaternion.LookRotation(movement, Vector3.up);
+		if (movement != Vector3.zero)
+		{
+			Quaternion rotationToMoveDir = Quaternion.LookRotation(movement, Vector3.up);
 
-		characterController.transform.rotation = Quaternion.RotateTowards(characterController.transform.rotation, rotationToMoveDir, rotationSpeed * Time.deltaTime);
+			playerAnimator.transform.rotation = Quaternion.RotateTowards(playerAnimator.transform.rotation, rotationToMoveDir, rotationSpeed * Time.deltaTime);
+		}
 
 		// animation
 		if (movement.x != 0 || movement.z != 0)

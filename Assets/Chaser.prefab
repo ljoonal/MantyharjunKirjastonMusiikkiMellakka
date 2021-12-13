@@ -822,7 +822,7 @@ GameObject:
   - component: {fileID: 2306378070742328346}
   m_Layer: 7
   m_Name: LibrarianCharacter
-  m_TagString: Untagged
+  m_TagString: Chaser
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1682,7 +1682,7 @@ GameObject:
   - component: {fileID: 2306378071521359413}
   - component: {fileID: 2306378071521359412}
   - component: {fileID: 2306378071521359415}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chaser
   m_TagString: Chaser
   m_Icon: {fileID: 0}
@@ -1712,8 +1712,8 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2306378071521359411}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
+  m_IsTrigger: 0
+  m_Enabled: 0
   m_Radius: 0.5
   m_Height: 1.8
   m_Direction: 1

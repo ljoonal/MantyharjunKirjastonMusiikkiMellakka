@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -12,6 +13,7 @@ public class GameStateManager : MonoBehaviour
 {
 	private float time = 0;
 	public float timeLimit = 120;
+	public GameObject OnLoseUI;
 	public Text timeText;
 	public Text instrumentsText;
 	public Text nextInstrumentText;
@@ -72,6 +74,24 @@ public class GameStateManager : MonoBehaviour
 		}
 		Debug.Log("Player incorrectly touched " + instrument.type.ToString());
 		return false;
+	}
+
+	public void OnLose()
+	{
+		Time.timeScale = 0;
+		AudioListener.pause = true;
+		OnLoseUI.SetActive(true);
+		StartCoroutine(GameOverCounter());
+		IEnumerator GameOverCounter()
+		{
+			for (; ; )
+			{
+				yield return new WaitForSecondsRealtime(5.0f);
+				Time.timeScale = 1;
+				AudioListener.pause = false;
+				FindObjectOfType<GlobalStateManager>().Scoreboard();
+			}
+		}
 	}
 }
 

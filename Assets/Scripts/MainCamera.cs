@@ -7,7 +7,7 @@ public class MainCamera : MonoBehaviour
 {
     public Transform target;
     public float smoothSpeed = 12.0f;
-    public Vector3 offset;
+	private Vector3 offset = new Vector3(0, 11, 6);
     public int zoom;
 
     void Zoom()

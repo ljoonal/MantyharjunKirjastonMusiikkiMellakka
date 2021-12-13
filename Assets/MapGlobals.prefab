@@ -698,6 +698,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeLimit: 120
+  OnLoseUI: {fileID: 1300411903}
   timeText: {fileID: 7623149669387406921}
   instrumentsText: {fileID: 1052489762}
   nextInstrumentText: {fileID: 1323734392}
