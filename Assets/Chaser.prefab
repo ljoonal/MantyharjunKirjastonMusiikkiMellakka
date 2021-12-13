@@ -820,7 +820,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2306378070742328344}
   - component: {fileID: 2306378070742328346}
-  - component: {fileID: 2306378070742328347}
   m_Layer: 7
   m_Name: LibrarianCharacter
   m_TagString: Untagged
@@ -864,14 +863,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!81 &2306378070742328347
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2306378070742328345}
-  m_Enabled: 1
 --- !u!1 &2306378070832857754
 GameObject:
   m_ObjectHideFlags: 0
