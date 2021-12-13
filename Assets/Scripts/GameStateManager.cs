@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -9,20 +11,67 @@ using UnityEngine.UI;
 public class GameStateManager : MonoBehaviour
 {
 	private float time = 0;
-	//private float remainingtime = 60;
-	public InputField TimeCounter;
-	private float collectedInstruments = 0;
+	public float timeLimit = 120;
+	public Text timeText;
+	public Text instrumentsText;
+	public Text nextInstrumentText;
+	private List<Instrument> collectedInstruments = new List<Instrument>();
+	private List<Instrument> notCollectedInstruments = new List<Instrument>();
+	private Instrument nextInstrument;
+	private SnakeManager snakeManager;
+	private System.Random rng = new System.Random();
+
+
+	void Start()
+	{
+		snakeManager = FindObjectOfType<SnakeManager>();
+	}
+
 	void FixedUpdate()
 	{
 		time += Time.deltaTime;
-		//remainingtime = remainingtime - time;
-		TimeCounter.text = time.ToString();
+		timeText.text = $"Aika: {Math.Round(time)}/{Math.Round(timeLimit)}";
 	}
 
-	public void OnInstrumentColleted(Instrument instrument)
+	public void OnInstrumentStart(Instrument instrument)
 	{
-		Debug.Log("Player has collected " + instrument.instrument.ToString());
-		collectedInstruments++;
+		notCollectedInstruments.Add(instrument);
+		instrument.GetComponent<ItemPull>().enabled = false;
+		UpdateInstrumentsState();
+	}
+
+	/* Picks the next instrument to collect and updates text displays. */
+	private void UpdateInstrumentsState()
+	{
+		instrumentsText.text = $"Soittimia: {collectedInstruments.Count}/{collectedInstruments.Count + notCollectedInstruments.Count}";
+
+		if (nextInstrument != null)
+		{
+			nextInstrument.GetComponent<ItemPull>().enabled = false;
+		}
+		int index = rng.Next(notCollectedInstruments.Count);
+		nextInstrument = notCollectedInstruments[index];
+		nextInstrumentText.text = "Etsi: " + nextInstrument.type.FinnishName();
+
+		nextInstrument.GetComponent<ItemPull>().enabled = true;
+	}
+
+	/** Returns true if the instrument was added. On false the instrument couldn't be collected yet. */
+	public bool OnInstrumentTrigger(Instrument instrument)
+	{
+		if (nextInstrument.type == instrument.type)
+		{
+			Debug.Log("Player has collected " + instrument.type.ToString());
+
+			notCollectedInstruments.Remove(instrument);
+			collectedInstruments.Add(instrument);
+			UpdateInstrumentsState();
+			snakeManager.AddBodyParts(instrument.gameObject);
+
+			return true;
+		}
+		Debug.Log("Player incorrectly touched " + instrument.type.ToString());
+		return false;
 	}
 }
 
