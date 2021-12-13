@@ -55,7 +55,7 @@ public class Instrument : MonoBehaviour
 	{
 		gameStateManager = FindObjectOfType<GameStateManager>();
 		audioSource = GetComponent<AudioSource>();
-		audioSource.volume = 0.1f;
+		audioSource.volume = 0.3f;
 		gameStateManager.OnInstrumentStart(this);
 	}
 
