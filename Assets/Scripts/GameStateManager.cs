@@ -32,7 +32,13 @@ public class GameStateManager : MonoBehaviour
 	void FixedUpdate()
 	{
 		time += Time.deltaTime;
-		timeText.text = $"Aika: {Math.Round(time)}/{Math.Round(timeLimit)}";
+		timeText.text = $"Aika: {Math.Round(time)}/{Math.Round(timeLimit)}"
+
+
+		if (time > timeLimit)
+		{
+			OnLose();
+		}
 	}
 
 	public void OnInstrumentStart(Instrument instrument)
