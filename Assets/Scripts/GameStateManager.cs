@@ -138,6 +138,7 @@ public class GameStateManager : MonoBehaviour
     {
 		string name = PlayerNameInput.text;
 		FindObjectOfType<BackendHandler>().SendDataToDB(name, CalculateScore());
+		SceneManager.LoadScene(0);
     }
 
 	public void OnLose()
