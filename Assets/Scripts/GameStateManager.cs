@@ -70,25 +70,19 @@ public class GameStateManager : MonoBehaviour
 		nextInstrument = notCollectedInstruments[index];
 		nextInstrumentText.text = "Etsi: " + nextInstrument.type.FinnishName();
 		nextInstrument.GetComponent<ItemPull>().enabled = true;
-		StartCoroutine(InstrumentHint());
+		StartCoroutine(InstrumentHintingVolumeAdjustment());
 	}
 
 	/** Makes next instrument louder compared to other instruments for a while. */
-	private IEnumerator InstrumentHint()
-    {
-		const float basicVolNotColl = 0.3f,
-			reducedVolNotColl = 0.05f,
-			basicVolColl = 0.05f,
-			reducedVolColl = 0.01f,
-			focusedVol = 3f;
-		nextInstrument.GetComponent<AudioSource>().volume = focusedVol;
+	private IEnumerator InstrumentHintingVolumeAdjustment()
+	{
+		nextInstrument.SetVolume(1f);
 		const float fadeOutDuration = 0.5f;
 		for (float t = 0f; t < fadeOutDuration; t += Time.deltaTime)
 		{
 			float normalizedTime = t / fadeOutDuration;
-			foreach (Instrument insrument in collectedInstruments) insrument.GetComponent<AudioSource>().volume = Mathf.Lerp(basicVolColl, reducedVolColl, normalizedTime);
-			foreach (Instrument insrument in notCollectedInstruments)
-				if (insrument != nextInstrument) insrument.GetComponent<AudioSource>().volume = Mathf.Lerp(basicVolNotColl, reducedVolNotColl, normalizedTime);
+			foreach (Instrument instrument in notCollectedInstruments)
+				if (instrument != nextInstrument) instrument.SetVolume(Mathf.Lerp(instrument.defaultVolume, instrument.defaultVolume / 6, normalizedTime));
 			yield return null;
 		}
 		yield return new WaitForSecondsRealtime(2);
@@ -97,10 +91,9 @@ public class GameStateManager : MonoBehaviour
 		for (float t = 0f; t < fadeInDuration; t += Time.deltaTime)
 		{
 			float normalizedTime = t / fadeInDuration;
-			foreach (Instrument insrument in collectedInstruments) insrument.GetComponent<AudioSource>().volume = Mathf.Lerp(reducedVolColl, basicVolColl, normalizedTime);
-			foreach (Instrument insrument in notCollectedInstruments)
-				if (insrument != nextInstrument) insrument.GetComponent<AudioSource>().volume = Mathf.Lerp(reducedVolNotColl, basicVolNotColl, normalizedTime);
-				else insrument.GetComponent<AudioSource>().volume = Mathf.Lerp(focusedVol, basicVolNotColl, normalizedTime);
+			foreach (Instrument instrument in notCollectedInstruments)
+				if (instrument != nextInstrument) instrument.SetVolume(Mathf.Lerp(instrument.defaultVolume / 6, instrument.defaultVolume, normalizedTime));
+				else instrument.SetVolume(Mathf.Lerp(1f, instrument.defaultVolume, normalizedTime));
 			yield return null;
 		}
 	}

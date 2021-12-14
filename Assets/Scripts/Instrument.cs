@@ -51,14 +51,21 @@ public class Instrument : MonoBehaviour
 
 	private GameStateManager gameStateManager;
 
+	public float defaultVolume = 0.3f;
+
 	void Start()
 	{
 		gameStateManager = FindObjectOfType<GameStateManager>();
 		audioSource = GetComponent<AudioSource>();
-		audioSource.volume = 0.3f;
+		audioSource.volume = defaultVolume;
 		audioSource.minDistance = 1f;
 		audioSource.maxDistance = 500f;
 		gameStateManager.OnInstrumentStart(this);
+	}
+
+	public void SetVolume(float volume)
+	{
+		audioSource.volume = volume;
 	}
 
 	void Update()
@@ -72,7 +79,7 @@ public class Instrument : MonoBehaviour
 		{
 			if (gameStateManager.OnInstrumentTrigger(this))
 			{
-				audioSource.volume = 0.05f;
+				audioSource.volume = 0.2f;
 				audioSource.spatialBlend = 0;
 				gameObject.AddComponent<GameOver>();
 			}
