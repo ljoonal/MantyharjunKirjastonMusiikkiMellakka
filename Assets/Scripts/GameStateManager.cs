@@ -137,7 +137,7 @@ public class GameStateManager : MonoBehaviour
 		if (!collectedInstruments.Contains(instrument) || collectedInstruments.Count == 0)
 		{
 			Debug.Log("Player incorrectly touched " + instrument.type.ToString());
-			onPickupText.text = "V��r� soitin!";
+			onPickupText.text = "Väärä soitin!";
 			StartCoroutine(RemoveTextCounter());
 			IEnumerator RemoveTextCounter()
 			{
