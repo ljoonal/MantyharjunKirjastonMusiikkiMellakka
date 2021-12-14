@@ -14,14 +14,15 @@ public class GameStateManager : MonoBehaviour
 {
 	private float time = 0;
 	public float timeLimit = 120;
-	public GameObject OnLoseUI;
-	public GameObject OnWinUI;
+	public GameObject OnGameOverUI;
+	public GameObject OnLoseText;
+	public GameObject OnWinText;
 	public InputField PlayerNameInput;
 	public Text timeText;
 	public Text instrumentsText;
 	public Text nextInstrumentText;
 	public GameObject chaser;
-	public bool hasWon = false;
+	public bool gameHasStopped = false;
 	private List<Instrument> collectedInstruments = new List<Instrument>();
 	private List<Instrument> notCollectedInstruments = new List<Instrument>();
 	private Instrument nextInstrument;
@@ -36,7 +37,7 @@ public class GameStateManager : MonoBehaviour
 
 	void FixedUpdate()
 	{
-		if(!hasWon)
+		if (!gameHasStopped)
         {
 			time += Time.deltaTime;
 			timeText.text = $"Aika: {Math.Round(time)}/{Math.Round(timeLimit)}";
@@ -59,6 +60,12 @@ public class GameStateManager : MonoBehaviour
 	private void UpdateInstrumentsState()
 	{
 		instrumentsText.text = $"Soittimia: {collectedInstruments.Count}/{collectedInstruments.Count + notCollectedInstruments.Count}";
+
+		if (nextInstrument != null)
+		{
+			nextInstrument.GetComponent<ItemPull>().enabled = false;
+		}
+
 		int index = rng.Next(notCollectedInstruments.Count);
 		nextInstrument = notCollectedInstruments[index];
 		nextInstrumentText.text = "Etsi: " + nextInstrument.type.FinnishName();
@@ -66,6 +73,7 @@ public class GameStateManager : MonoBehaviour
 		StartCoroutine(InstrumentHint());
 	}
 
+	/** Makes next instrument louder compared to other instruments for a while. */
 	private IEnumerator InstrumentHint()
     {
 		const float basicVolNotColl = 0.3f,
@@ -106,7 +114,7 @@ public class GameStateManager : MonoBehaviour
 
 			notCollectedInstruments.Remove(instrument);
 			collectedInstruments.Add(instrument);
-			if(notCollectedInstruments.Count == 0) onWin();
+			if (notCollectedInstruments.Count == 0) OnWin();
 			else UpdateInstrumentsState();
 			
 			snakeManager.AddBodyParts(instrument.gameObject);
@@ -117,35 +125,34 @@ public class GameStateManager : MonoBehaviour
 		return false;
 	}
 
-	public void onWin()
-    {
-		hasWon = true;
-		OnWinUI.SetActive(true);
-		chaser.GetComponent<NavMeshAgent>().isStopped = true;
-	} 
+	private int CalculateScore()
+	{
+		float instrumentScore = collectedInstruments.Count * 1000;
+		return (int)Math.Round(instrumentScore / time);
+	}
 
-	public void postToDb()
+	public void OnWin()
+	{
+		if (gameHasStopped) return;
+		gameHasStopped = true;
+		OnWinText.SetActive(true);
+		OnGameOverUI.SetActive(true);
+		chaser.GetComponent<NavMeshAgent>().isStopped = true;
+	}
+
+	public void PostToDb()
     {
 		string name = PlayerNameInput.text;
-		FindObjectOfType<BackendHandler>().SendDataToDB(name, 120 - (int)time);
+		FindObjectOfType<BackendHandler>().SendDataToDB(name, CalculateScore());
     }
 
 	public void OnLose()
 	{
-		Time.timeScale = 0;
-		AudioListener.pause = true;
-		OnLoseUI.SetActive(true);
-		StartCoroutine(GameOverCounter());
-		IEnumerator GameOverCounter()
-		{
-			for (; ; )
-			{
-				yield return new WaitForSecondsRealtime(5.0f);
-				Time.timeScale = 1;
-				AudioListener.pause = false;
-				FindObjectOfType<GlobalStateManager>().Scoreboard();
-			}
-		}
+		if (gameHasStopped) return;
+		gameHasStopped = true;
+		OnLoseText.SetActive(true);
+		OnGameOverUI.SetActive(true);
+		chaser.GetComponent<NavMeshAgent>().isStopped = true;
 	}
 }
 

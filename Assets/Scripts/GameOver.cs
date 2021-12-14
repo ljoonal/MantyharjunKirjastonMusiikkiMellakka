@@ -10,12 +10,9 @@ public class GameOver : MonoBehaviour
 {
 	void OnTriggerEnter(Collider other)
 	{
-		if(!FindObjectOfType<GameStateManager>().hasWon)
-        {
-			if (other.CompareTag("Chaser"))
-			{
-				FindObjectOfType<GameStateManager>().OnLose();
-			}
+		if (other.CompareTag("Chaser"))
+		{
+			FindObjectOfType<GameStateManager>().OnLose();
 		}
 	}
 }
