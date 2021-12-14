@@ -137,7 +137,7 @@ public class GameStateManager : MonoBehaviour
 		if (!collectedInstruments.Contains(instrument) || collectedInstruments.Count == 0)
 		{
 			Debug.Log("Player incorrectly touched " + instrument.type.ToString());
-			onPickupText.text = "Väärä soitin!";
+			onPickupText.text = "Vï¿½ï¿½rï¿½ soitin!";
 			StartCoroutine(RemoveTextCounter());
 			IEnumerator RemoveTextCounter()
 			{
@@ -158,7 +158,7 @@ public class GameStateManager : MonoBehaviour
 	private int CalculateScore()
 	{
 		float instrumentScore = collectedInstruments.Count * 1000;
-		return (int)Math.Round(instrumentScore / time);
+		return (int)Math.Round(instrumentScore / (timeLimit + time));
 	}
 
 	public void OnWin()
@@ -174,6 +174,7 @@ public class GameStateManager : MonoBehaviour
     {
 		string name = PlayerNameInput.text;
 		FindObjectOfType<BackendHandler>().SendDataToDB(name, CalculateScore());
+		SceneManager.LoadScene(0);
     }
 
 	public void OnLose()
