@@ -21,6 +21,7 @@ public class GameStateManager : MonoBehaviour
 	public Text timeText;
 	public Text instrumentsText;
 	public Text nextInstrumentText;
+	public Text onPickupText;
 	public GameObject chaser;
 	public bool gameHasStopped = false;
 	private List<Instrument> collectedInstruments = new List<Instrument>();
@@ -54,6 +55,14 @@ public class GameStateManager : MonoBehaviour
 		notCollectedInstruments.Add(instrument);
 		instrument.GetComponent<ItemPull>().enabled = false;
 		UpdateInstrumentsState();
+
+		List<Vector3> positions = notCollectedInstruments.Select((x) => x.transform.position).ToList();
+		foreach (var notCollectedInstrument in notCollectedInstruments)
+		{
+			int index = rng.Next(positions.Count);
+			notCollectedInstrument.transform.position = positions[index];
+			positions.RemoveAt(index);
+		}
 	}
 
 	/* Picks the next instrument to collect and updates text displays. */
@@ -68,7 +77,7 @@ public class GameStateManager : MonoBehaviour
 
 		int index = rng.Next(notCollectedInstruments.Count);
 		nextInstrument = notCollectedInstruments[index];
-		nextInstrumentText.text = "Etsi: " + nextInstrument.type.FinnishName();
+		nextInstrumentText.text = "Etsi: " + nextInstrument.type.InstrumentHints();
 		nextInstrument.GetComponent<ItemPull>().enabled = true;
 		StartCoroutine(InstrumentHintingVolumeAdjustment());
 	}
@@ -104,19 +113,46 @@ public class GameStateManager : MonoBehaviour
 		if (gameHasStopped) return false;
 		if (nextInstrument.type == instrument.type)
 		{
+			onPickupText.text = nextInstrument.type.FinnishName();
 			Debug.Log("Player has collected " + instrument.type.ToString());
 
 			notCollectedInstruments.Remove(instrument);
 			collectedInstruments.Add(instrument);
 			if (notCollectedInstruments.Count == 0) OnWin();
 			else UpdateInstrumentsState();
-			
-			snakeManager.AddBodyParts(instrument.gameObject);
 
+			snakeManager.AddBodyParts(instrument.gameObject);
+			StartCoroutine(RemoveTextCounter());
+			IEnumerator RemoveTextCounter()
+			{
+				for (; ; )
+				{
+					yield return new WaitForSecondsRealtime(3.0f);
+					onPickupText.text = "";
+				}
+			}
 			return true;
+
 		}
-		Debug.Log("Player incorrectly touched " + instrument.type.ToString());
-		return false;
+		if (!collectedInstruments.Contains(instrument) || collectedInstruments.Count == 0)
+		{
+			Debug.Log("Player incorrectly touched " + instrument.type.ToString());
+			onPickupText.text = "V‰‰r‰ soitin!";
+			StartCoroutine(RemoveTextCounter());
+			IEnumerator RemoveTextCounter()
+			{
+				for (; ; )
+				{
+					yield return new WaitForSecondsRealtime(3.0f);
+					onPickupText.text = "";
+				}
+			}
+			return false;
+		}
+		else
+        {
+			return false;
+        }
 	}
 
 	private int CalculateScore()

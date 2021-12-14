@@ -39,6 +39,22 @@ public static class InstrumentData
 		InstrumentType.Violine => "Alttoviulu",
 		_ => throw new ArgumentOutOfRangeException(nameof(self), $"Not expected instrument value: {self}"),
 	};
+	public static string InstrumentHints(this InstrumentType self) => self switch
+	{
+		InstrumentType.BassDrum => "rumpu, jolla on hyvin leveä, peittävä ja syvä ääni.",
+		InstrumentType.BassElectric => "sähkökitaran esimerkin mukaan tehty sähköinen versio akustisesta bassokitarasta.",
+		InstrumentType.BongoDrum => "rumpusoitin, joka koostuu kahdesta pienestä, puupalikan avulla toisiinsa kiinnitetystä rummusta.",
+		InstrumentType.Flute => "puupuhallinsoitin, jossa soittaja puhaltaa erityiseen suukappaleeseen eli ”nokkaan”.",
+		InstrumentType.GuitarAccoustic => "kielisoitin, jonka ääni vahvistetaan akustisesti puisen kaikukopan avulla.",
+		InstrumentType.GuitarElectric => "kielisoitin, jossa on sähkömagneettiset mikrofonit, jotka muuttavat kielten värähtelyn sähköisiksi signaaleiksi.",
+		InstrumentType.HiHat => "rumpusetin osa, joka koostuu kahdesta päällekkäisestä symbaalista, joista toinen on käännetty ylösalaisin.",
+		InstrumentType.Piano => "kosketinsoitin, jossa ääni syntyy huopapäällysteisten vasaroiden lyödessä soittimen sisälle jännitettyjä metallikieliä.",
+		InstrumentType.SnareDrum => "rumpu, jossa kalvoa vasten viritetty erityinen virvelimatto saa aikaan läpitunkevan ja taajuudeltaan epämääräisen äänen.",
+		InstrumentType.Tamborine => "lyömäsoitin, joka koostuu rungosta, kalvosta ja rungossa sijaitsevista pienistä lautasista, helistimistä.",
+		InstrumentType.Tuba => "matalaäänisin sinfoniaorkesterissa käytettävä vaskipuhallin.",
+		InstrumentType.Violine => "neljäkielinen kielisoitin, jota soitetaan jousella.",
+		_ => throw new ArgumentOutOfRangeException(nameof(self), $"Not expected instrument value: {self}"),
+	};
 }
 
 
