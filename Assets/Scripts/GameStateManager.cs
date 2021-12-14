@@ -101,6 +101,7 @@ public class GameStateManager : MonoBehaviour
 	/** Returns true if the instrument was added. On false the instrument couldn't be collected yet. */
 	public bool OnInstrumentTrigger(Instrument instrument)
 	{
+		if (gameHasStopped) return false;
 		if (nextInstrument.type == instrument.type)
 		{
 			Debug.Log("Player has collected " + instrument.type.ToString());
