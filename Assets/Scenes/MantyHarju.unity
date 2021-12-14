@@ -58350,14 +58350,6 @@ PrefabInstance:
       propertyPath: chaser
       value: 
       objectReference: {fileID: 793132360}
-    - target: {fileID: 1946412010, guid: 30e2e8c4c406b31f19bb61e95711b5d5, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6446765704055750119, guid: 30e2e8c4c406b31f19bb61e95711b5d5, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7623149670478370453, guid: 30e2e8c4c406b31f19bb61e95711b5d5, type: 3}
       propertyPath: m_Name
       value: MapGlobals

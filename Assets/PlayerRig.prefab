@@ -2350,7 +2350,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterController: {fileID: 968342899047954914}
   playerAnimator: {fileID: 968342898919535670}
-  moveSpeed: 4
+  moveSpeed: 6
   rotationSpeed: 400
 --- !u!136 &1942478644
 CapsuleCollider:
