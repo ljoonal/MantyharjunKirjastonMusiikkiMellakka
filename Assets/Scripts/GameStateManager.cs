@@ -55,6 +55,14 @@ public class GameStateManager : MonoBehaviour
 		notCollectedInstruments.Add(instrument);
 		instrument.GetComponent<ItemPull>().enabled = false;
 		UpdateInstrumentsState();
+
+		List<Vector3> positions = notCollectedInstruments.Select((x) => x.transform.position).ToList();
+		foreach (var notCollectedInstrument in notCollectedInstruments)
+		{
+			int index = rng.Next(positions.Count);
+			notCollectedInstrument.transform.position = positions[index];
+			positions.RemoveAt(index);
+		}
 	}
 
 	/* Picks the next instrument to collect and updates text displays. */
