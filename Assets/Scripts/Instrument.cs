@@ -73,6 +73,7 @@ public class Instrument : MonoBehaviour
 			if (gameStateManager.OnInstrumentTrigger(this))
 			{
 				audioSource.volume = 0.7f;
+				audioSource.spatialBlend = 0;
 				gameObject.AddComponent<GameOver>();
 			}
 		}
