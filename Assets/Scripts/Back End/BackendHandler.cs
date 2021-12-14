@@ -34,20 +34,29 @@ public class BackendHandler : MonoBehaviour
         CreateHighscoreList();
     }
 
-    IEnumerator PostRequestForHighScoresFile(string url, HighScores.HighScore hsItem)
+    public void SendDataToDB(string name, int scrore)
     {
-        using (UnityWebRequest webRequest = UnityWebRequest.Post(url, JsonUtility.ToJson(hsItem)))
-        {
-            // set downloadHandler for json
-            webRequest.downloadHandler = new DownloadHandlerBuffer();
-            webRequest.SetRequestHeader("Content-Type", "application/json");
-            webRequest.SetRequestHeader("Accept", "application/json");
-            // Request and wait for reply
-            yield return webRequest.SendWebRequest();
-            // get raw data and convert it to string
-            string resultStr = System.Text.Encoding.UTF8.GetString(webRequest.downloadHandler.data);
-        }
+        HighScores.HighScore newHs = new HighScores.HighScore();
+        newHs.playername = name;
+        newHs.score = scrore;
 
+        StartCoroutine(PostRequestForHighScoresFile());
+
+        IEnumerator PostRequestForHighScoresFile()
+        {
+            using (UnityWebRequest webRequest = UnityWebRequest.Post(backendHighscoresURL, JsonUtility.ToJson(newHs)))
+            {
+                // set downloadHandler for json
+                webRequest.downloadHandler = new DownloadHandlerBuffer();
+                webRequest.SetRequestHeader("Content-Type", "application/json");
+                webRequest.SetRequestHeader("Accept", "application/json");
+                // Request and wait for reply
+                yield return webRequest.SendWebRequest();
+                // get raw data and convert it to string
+                string resultStr = System.Text.Encoding.UTF8.GetString(webRequest.downloadHandler.data);
+            }
+
+        }
     }
 
     void CreateHighscoreList()
