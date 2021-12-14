@@ -56,6 +56,8 @@ public class Instrument : MonoBehaviour
 		gameStateManager = FindObjectOfType<GameStateManager>();
 		audioSource = GetComponent<AudioSource>();
 		audioSource.volume = 0.3f;
+		audioSource.minDistance = 1f;
+		audioSource.maxDistance = 500f;
 		gameStateManager.OnInstrumentStart(this);
 	}
 
@@ -70,7 +72,7 @@ public class Instrument : MonoBehaviour
 		{
 			if (gameStateManager.OnInstrumentTrigger(this))
 			{
-				audioSource.volume = 1f;
+				audioSource.volume = 0.7f;
 				gameObject.AddComponent<GameOver>();
 			}
 		}

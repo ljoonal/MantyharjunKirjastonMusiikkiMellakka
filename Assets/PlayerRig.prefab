@@ -26,13 +26,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 968342897188260701}
-  m_LocalRotation: {x: 0.4358552, y: -0, z: -0, w: 0.9000168}
-  m_LocalPosition: {x: 0, y: 9.68, z: -7.6499996}
+  m_LocalRotation: {x: -0, y: 0.86008126, z: -0.51015705, w: 0}
+  m_LocalPosition: {x: 0, y: 11, z: 6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 968342898217024617}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 51.679, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 61.349, y: 180, z: 0}
 --- !u!20 &968342897188260697
 Camera:
   m_ObjectHideFlags: 0
@@ -123,7 +123,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 968342899047954913}
   smoothSpeed: 12
-  offset: {x: -6, y: 11, z: 6}
   zoom: 0
 --- !u!1 &968342898217024618
 GameObject:
@@ -2129,7 +2128,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 968342898910136310}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
@@ -2138,7 +2137,7 @@ Transform:
   - {fileID: 968342898791179728}
   m_Father: {fileID: 968342899047954913}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!95 &968342898919535670
 Animator:
   serializedVersion: 3
@@ -2311,14 +2310,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 968342899047954915}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 968342898909649878}
   m_Father: {fileID: 968342898217024617}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!143 &968342899047954914
 CharacterController:
   m_ObjectHideFlags: 0
@@ -2351,7 +2350,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterController: {fileID: 968342899047954914}
   playerAnimator: {fileID: 968342898919535670}
-  moveSpeed: 3
+  moveSpeed: 4
   rotationSpeed: 400
 --- !u!136 &1942478644
 CapsuleCollider:

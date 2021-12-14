@@ -10,10 +10,12 @@ public class ChaserController : MonoBehaviour
 	public NavMeshAgent agent;
 
 	private SnakeManager snakeManager;
+	private Animator animator;
 
 	void Start()
 	{
 		snakeManager = FindObjectOfType<SnakeManager>();
+		animator = GetComponentInChildren<Animator>();
 	}
 
 	void FixedUpdate()
@@ -33,6 +35,8 @@ public class ChaserController : MonoBehaviour
 		}
 
 		agent.SetDestination(closestTarget);
+
+		animator?.SetBool("isRunning", true);
 	}
 }
 

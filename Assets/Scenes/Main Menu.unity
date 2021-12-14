@@ -644,7 +644,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: GuitarAcoustic
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4101548170377072922, guid: 7691846c6d8d7b2ea9d05a843c2e38bc, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7691846c6d8d7b2ea9d05a843c2e38bc, type: 3}
 --- !u!1001 &956563453
 PrefabInstance:
@@ -1569,7 +1570,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Piano
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6090506133496397004, guid: 3a14d02379baec727a5ac9e74f187da0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3a14d02379baec727a5ac9e74f187da0, type: 3}
 --- !u!1 &2078618010
 GameObject:

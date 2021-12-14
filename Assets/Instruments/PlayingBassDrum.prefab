@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6957321665117444694}
   - component: {fileID: 6483293532959457538}
   - component: {fileID: 6668404362143021593}
+  - component: {fileID: 1419319135}
   m_Layer: 6
   m_Name: PlayingBassDrum
   m_TagString: Untagged
@@ -174,6 +175,22 @@ MonoBehaviour:
   target: {fileID: 0}
   moveSpeed: 10
   pullRange: 4
+--- !u!54 &1419319135
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6483293532959457537}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &602235027527863684
 PrefabInstance:
   m_ObjectHideFlags: 0
