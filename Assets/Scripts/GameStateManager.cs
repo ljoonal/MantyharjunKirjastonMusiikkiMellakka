@@ -8,8 +8,8 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 /** Manages the game's state when playing. So
-  * So keeps track off of current score for example.
-  */
+	* So keeps track off of current score for example.
+	*/
 public class GameStateManager : MonoBehaviour
 {
 	private float time = 0;
@@ -39,7 +39,7 @@ public class GameStateManager : MonoBehaviour
 	void FixedUpdate()
 	{
 		if (!gameHasStopped)
-        {
+		{
 			time += Time.deltaTime;
 			timeText.text = $"Aika: {Math.Round(time)}/{Math.Round(timeLimit)}";
 		}
@@ -121,9 +121,9 @@ public class GameStateManager : MonoBehaviour
 			return false;
 		}
 		else
-        {
+		{
 			return false;
-        }
+		}
 	}
 
 	private int CalculateScore()
@@ -142,11 +142,11 @@ public class GameStateManager : MonoBehaviour
 	}
 
 	public void PostToDb()
-    {
+	{
 		string name = PlayerNameInput.text;
 		FindObjectOfType<BackendHandler>().SendDataToDB(name, CalculateScore());
 		SceneManager.LoadScene(0);
-    }
+	}
 
 	public void OnLose()
 	{

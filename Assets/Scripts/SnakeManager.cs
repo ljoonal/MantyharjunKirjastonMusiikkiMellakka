@@ -1,9 +1,7 @@
-using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
-/** Controls the snake that the player makes my collecting instruments. */
+/** Controls the snake that the player makes by collecting instruments. */
 public class SnakeManager : MonoBehaviour
 {
 	public Transform target;
@@ -16,16 +14,18 @@ public class SnakeManager : MonoBehaviour
 	}
 
 	void FixedUpdate()
-    {
+	{
 		Transform previousTransform = target;
+		// Moves the next bodypart towards the previous one if it's too far away
 		foreach (var bpart in bodyParts)
 		{
 			float distance = Vector3.Distance(previousTransform.position, bpart.transform.position);
 			if (distance > maxDistanceBetween) MovePartTo(bpart, previousTransform);
 			previousTransform = bpart.transform;
 		}
-    }
+	}
 
+	/** Moves bodypart closer to transform, but only the minimum distance that is required. **/
 	private void MovePartTo(GameObject bodyPart, Transform to)
 	{
 		Vector3 closeEnoughPosition = Vector3.MoveTowards(to.position, bodyPart.transform.position, maxDistanceBetween);
