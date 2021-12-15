@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
 	public CharacterController characterController;
 	public Animator playerAnimator;
 
-	public float moveSpeed = 5.0f;
+	public float moveSpeed = 4.0f;
 	public float rotationSpeed = 300.0f;
 
 	private Vector2 movementInput = Vector2.zero;
