@@ -73,47 +73,32 @@ public class GameStateManager : MonoBehaviour
 		if (nextInstrument != null)
 		{
 			nextInstrument.GetComponent<ItemPull>().enabled = false;
+			if (!collectedInstruments.Contains(nextInstrument))
+				nextInstrument.SetVolume(nextInstrument.defaultVolume);
 		}
 
 		int index = rng.Next(notCollectedInstruments.Count);
 		nextInstrument = notCollectedInstruments[index];
 		nextInstrumentText.text = "Etsi: " + nextInstrument.type.InstrumentHints();
 		nextInstrument.GetComponent<ItemPull>().enabled = true;
-		StartCoroutine(InstrumentHintingVolumeAdjustment());
-	}
-
-	/** Makes next instrument louder compared to other instruments for a while. */
-	private IEnumerator InstrumentHintingVolumeAdjustment()
-	{
 		nextInstrument.SetVolume(1f);
-		const float fadeOutDuration = 0.5f;
-		for (float t = 0f; t < fadeOutDuration; t += Time.deltaTime)
-		{
-			float normalizedTime = t / fadeOutDuration;
-			foreach (Instrument instrument in notCollectedInstruments)
-				if (instrument != nextInstrument) instrument.SetVolume(Mathf.Lerp(instrument.defaultVolume, instrument.defaultVolume / 6, normalizedTime));
-			yield return null;
-		}
-		yield return new WaitForSecondsRealtime(2);
-
-		const float fadeInDuration = 0.5f;
-		for (float t = 0f; t < fadeInDuration; t += Time.deltaTime)
-		{
-			float normalizedTime = t / fadeInDuration;
-			foreach (Instrument instrument in notCollectedInstruments)
-				if (instrument != nextInstrument) instrument.SetVolume(Mathf.Lerp(instrument.defaultVolume / 6, instrument.defaultVolume, normalizedTime));
-				else instrument.SetVolume(Mathf.Lerp(1f, instrument.defaultVolume, normalizedTime));
-			yield return null;
-		}
 	}
 
 	/** Returns true if the instrument was added. On false the instrument couldn't be collected yet. */
 	public bool OnInstrumentTrigger(Instrument instrument)
 	{
 		if (gameHasStopped) return false;
+
+			IEnumerator RemoveTextCounter()
+			{
+				yield return new WaitForSecondsRealtime(3.0f);
+				onPickupText.transform.parent.gameObject.SetActive(false);
+			}
+
 		if (nextInstrument.type == instrument.type)
 		{
 			onPickupText.text = nextInstrument.type.FinnishName();
+			onPickupText.transform.parent.gameObject.SetActive(true);
 			Debug.Log("Player has collected " + instrument.type.ToString());
 
 			notCollectedInstruments.Remove(instrument);
@@ -123,30 +108,16 @@ public class GameStateManager : MonoBehaviour
 
 			snakeManager.AddBodyParts(instrument.gameObject);
 			StartCoroutine(RemoveTextCounter());
-			IEnumerator RemoveTextCounter()
-			{
-				for (; ; )
-				{
-					yield return new WaitForSecondsRealtime(3.0f);
-					onPickupText.text = "";
-				}
-			}
 			return true;
 
 		}
-		if (!collectedInstruments.Contains(instrument) || collectedInstruments.Count == 0)
+
+		if (!collectedInstruments.Contains(instrument))
 		{
 			Debug.Log("Player incorrectly touched " + instrument.type.ToString());
 			onPickupText.text = "Väärä soitin!";
+			onPickupText.transform.parent.gameObject.SetActive(true);
 			StartCoroutine(RemoveTextCounter());
-			IEnumerator RemoveTextCounter()
-			{
-				for (; ; )
-				{
-					yield return new WaitForSecondsRealtime(3.0f);
-					onPickupText.text = "";
-				}
-			}
 			return false;
 		}
 		else

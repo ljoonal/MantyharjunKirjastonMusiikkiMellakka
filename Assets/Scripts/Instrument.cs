@@ -95,10 +95,28 @@ public class Instrument : MonoBehaviour
 		{
 			if (gameStateManager.OnInstrumentTrigger(this))
 			{
-				audioSource.volume = 0.2f;
-				audioSource.spatialBlend = 0;
 				gameObject.AddComponent<GameOver>();
+
+				// Lessen the audio volume before switching spatialization.
+				audioSource.volume = Math.Max(audioSource.volume / 2, defaultVolume);
+				audioSource.spatialBlend = 0;
+
+				StartCoroutine(OnCollectVolumeAdjust());
 			}
+		}
+	}
+
+	/** Gradually make the instrument volume quieter. */
+	private IEnumerator OnCollectVolumeAdjust()
+	{
+		const float fadeOutDuration = 3f;
+		float startingVolume = audioSource.volume;
+
+		for (float t = 0f; t < fadeOutDuration; t += Time.deltaTime)
+		{
+			float normalizedTime = t / fadeOutDuration;
+			audioSource.volume = Mathf.Lerp(startingVolume, defaultVolume / 3, normalizedTime);
+			yield return null;
 		}
 	}
 }
